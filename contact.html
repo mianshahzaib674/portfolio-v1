@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <!-- ----------header desgin------- -->
+    <header class="header">
+        <a href="index.html" class="logo">Port<span>folio.</span></a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="index.html" style="--i:1;" class="{homeActive}">Home</a>
+            <a href="about.html" style="--i:2;" class="{aboutActive}">About</a>
+            <a href="services.html" style="--i:3;" class="{servicesActive}">Services</a>
+            <a href="portfolio.html" style="--i:4;" class="{portfolioActive}">Portfolio</a>
+            <a href="contact.html" style="--i:5;" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ========================contact============================== -->
+
+    <div class="contact-form">
+        <h1>Contact <span>Me!</span></h1>
+        <form id="contactForm">
+            <div class="form-group">
+                <input type="text" id="fullName" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="mobileNumber" placeholder="Mobile Number" required>
+            </div>
+            <div class="form-group">
+                <input type="email" id="emailAddress" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="emailSubject" placeholder="Email Subject" required>
+            </div>
+            <div class="form-group">
+                <textarea id="message" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </div>
+
+
+<!-- ======================footer======================= -->
+ 
+
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const fullName = document.getElementById('fullName').value;
+            const mobileNumber = document.getElementById('mobileNumber').value;
+            const emailAddress = document.getElementById('emailAddress').value;
+            const emailSubject = document.getElementById('emailSubject').value;
+            const message = document.getElementById('message').value;
+
+            const mailtoLink = `mailto:shonamian674@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(`Name: ${fullName}\nMobile Number: ${mobileNumber}\nEmail: ${emailAddress}\n\nMessage:\n${message}`)}`;
+            
+            window.location.href = mailtoLink;
+        });
+    </script>
+
+
+</body>
+
+</html>
